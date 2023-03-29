@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="welcome">
+        <img src="./img/Logo_da_Rolex.png" alt="logo" class="logoImg" onclick="hideWelcome()">
+    </div>
+    <div class="container">
+        <div class="afterContainer hide">
+            <header class="headerCls">
+                <img src="./img/coronapng.png" alt="corona" class="coronaImg" onclick="showPrincipal()">
+                <div class="boxSecondHour">
+                    <p class="numHour hourClass"></p>
+                    <p class="numMinute hourClass">Min:</p>
+                    <p class="numSeconds hourClass">Seconds</p>
+                </div>
+                <img src="./img/rolexmenu.png" alt="" class="menuImg" onclick="displayMenu()">
+            </header>
+            <div class="videoContainer">
+                <video src="./img/new-watches-2023-hub-cover-autoplay.mp4" class="rolexVideo" loop muted autoplay></video>
+            </div>
+            <nav class="navSelector hide">
+                <h2 onclick="displayHome()">Home</h2>
+                <h2 class="watchesCls" onclick="displayWatchesBox()">Watches</h2>
+                <h2 onclick="displayHour()">Time</h2>
+            </nav>
+            <div class="containerOfSelection">
+                <div class="boxOfWatches hide">
+                    <div class="selectType">
+                        <h3 class="typeOfRolex selectGolden" onclick="golden()">Golden</h3>
+                        <h3 class="typeOfRolex selectSilver" onclick="silver()">Silver</h3>
+                        <h3 class="typeOfRolex selectWoman" onclick="woman()">Woman</h3>
+                        <h3 class="typeOfRolex selectExclusive" onclick="exclusive()">Exclusive</h3>
+                    </div>
+                    <div class="golden relojesImgs">
+                        <img src="./img/bgBlackRolex.webp" alt="" class="goldenImgs">
+                        <img src="./img/rolexdorado.webp" alt="" class="goldenImgs">    
+                        <img src="./img/rolexOro.webp" alt="" class="goldenImgs">
+                    </div>
+                    <div class="silver relojesImgs">
+                        <img src="./img/rolexPlateado.webp" alt="" class="goldenImgs">
+                        <img src="./img/rolexPlata.webp" alt="" class="goldenImgs">
+                        <img src="./img/rolexBgBlue.webp" alt="" class="goldenImgs">
+                    </div>
+                    <div class="woman relojesImgs">
+                        <img src="./img/anotherWomanWatch.webp" alt="" class="goldenImgs">
+                        <img src="./img/reloxWoman.png" alt="" class="goldenImgs">
+                        <img src="./img/rolexpinkBg.webp" alt="" class="goldenImgs">
+                    </div>
+                    <div class="exclusive relojesImgs">
+                        <img src="./img/rainbowRolex.jfif" alt="" class="goldenImgs">
+                        <img src="./img/rainbowPlataRolex.png" alt="" class="goldenImgs">
+                    </div>
+                </div>
+            </div>
+            <div class="time hide">
+                <div class="clock">
+                    <img src="./img/horaPng.png" alt="" class="clockImg">
+                    <div class="circle"></div>
+                    <div class="hoursHand line"></div>
+                    <div class="minutesHand line"></div>
+                    <div class="secondsHand line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
