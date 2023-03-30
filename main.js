@@ -42,6 +42,9 @@ function exclusive(){
     document.querySelector(".selectWoman").style.color = ` #fff`;
 }
 function displayMenu(e){
+    if(screen.width < 700){
+        document.querySelector(".headerCls").style.marginBottom = '200px';
+    }
     if(document.querySelector(".navSelector").style.display !== "block"){
         $(".navSelector").fadeIn(500);
         document.querySelector(".menuImg").style.rotate = '180deg';
@@ -49,12 +52,18 @@ function displayMenu(e){
     else{
         document.querySelector(".menuImg").style.rotate = '360deg';
         $(".navSelector").fadeOut(500);
+        if(screen.width < 700){
+            document.querySelector(".headerCls").style.marginBottom = '0';
+        }
     }
 } 
 function hideMenu(){
     $(".navSelector").fadeOut(500);
 }
 function displayWatchesBox(){
+    if(screen.width < 700){
+        document.querySelector(".headerCls").style.marginBottom = '0';
+    }
     document.querySelector(".boxOfWatches").classList.remove("hide")
     $(".boxSecondHour").fadeOut(500, function (){
         $(".videoContainer").fadeOut(500);
@@ -70,8 +79,21 @@ function displayWatchesBox(){
         'opacity': '0',
         'display': 'flex'
     }).animate({'opacity': '1'}, 3000);
+    if(screen.width < 700){
+        $(".relojesImgs").css({
+            'opacity': '0',
+            'display': 'grid'
+        }).animate({'opacity': '1'}, 3000);
+        $(".selectType").css({
+            'opacity': '0',
+            'display': 'grid'
+        }).animate({'opacity': '1'}, 3000);
+    }
 }
 function displayHour(){
+    if(screen.width < 700){
+        document.querySelector(".headerCls").style.marginBottom = '0';
+    }
     $(".boxSecondHour").fadeOut(500, function (){
         $(".selectType").fadeOut(500);
         $(".relojesImgs").fadeOut(500);
@@ -82,13 +104,6 @@ function displayHour(){
     document.querySelector(".menuImg").style.rotate = '360deg';
 }
 function showPrincipal(){
-    // $(".selectType").fadeOut(500, function (){
-    //     $(".boxSecondHour").fadeOut(500);
-    //     $(".welcome").delay(500).fadeIn(500);
-    //     $(".relojesImgs").fadeOut(500);
-    //     $(".videoContainer").fadeOut(500);
-    //     $(".time").fadeOut(500);
-    //});
     $(".afterContainer").fadeOut(500, function (){
         $(".welcome").delay(500).fadeIn(500);
     });

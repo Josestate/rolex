@@ -120,18 +120,18 @@ body{
 }
 
 .hoursHand{
-    width: 8%;
+    width: 90px;
     height: 8px;
     background-color: rgb(0, 0, 0);
 }
 .minutesHand{
-    width: 12%;
+    width: 130px;
     height: 5px;;
     background-color: rgb(0, 0, 0);
     z-index: 4;
 }
 .secondsHand{
-    width: 12%;
+    width: 130px;
     height: 2px;
     background-color: rgb(255, 1, 1);
     z-index: 5;
@@ -152,6 +152,32 @@ body{
     transform-origin: left;
     border-bottom-right-radius: 100%;
     rotate: -90deg;
+}
+@media only screen and (max-width: 700px){
+    .logoImg{
+        width: 80%;
+    }
+    .videoContainer{
+        width: 100%;
+    }
+    .rolexVideo{
+        width: 100%;
+    }
+    .navSelector{
+        font-size: 80%;
+        width: -webkit-fill-available;
+        text-align: center;
+    
+    }
+    .boxOfWatches{
+        display: grid;
+    }
+    .selectType{
+        display: grid;
+    }
+    .relojesImgs{
+        display: grid;
+    }
 }
 .hide{
     display: none;
