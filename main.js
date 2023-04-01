@@ -109,6 +109,7 @@ function showPrincipal(){
     });
     hideMenu();
     document.querySelector(".menuImg").style.rotate = '360deg';
+    displayHome()
 }
 function displayHome(){
     $(".selectType").fadeOut(500, function (){
