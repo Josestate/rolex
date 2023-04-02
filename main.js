@@ -51,46 +51,50 @@ function displayMenu(e){
     }
     else{
         document.querySelector(".menuImg").style.rotate = '360deg';
-        $(".navSelector").fadeOut(500);
         if(screen.width < 700){
             document.querySelector(".headerCls").style.marginBottom = '0';
         }
+        $(".navSelector").fadeOut(500);
     }
 } 
 function hideMenu(){
     $(".navSelector").fadeOut(500);
 }
 function displayWatchesBox(){
-    if(screen.width < 700){
-        document.querySelector(".headerCls").style.marginBottom = '0';
-    }
-    document.querySelector(".boxOfWatches").classList.remove("hide")
-    $(".boxSecondHour").fadeOut(500, function (){
-        $(".videoContainer").fadeOut(500);
-        $(".time").fadeOut(500);
-    });
-    hideMenu();
-    document.querySelector(".menuImg").style.rotate = '360deg';
     $(".relojesImgs").css({
         'opacity': '0',
         'display': 'flex'
-    }).animate({'opacity': '1'}, 3000);
+    }).animate({'opacity': '1'}, 2000);
     $(".selectType").css({
         'opacity': '0',
         'display': 'flex'
-    }).animate({'opacity': '1'}, 3000);
+    }).animate({'opacity': '1'}, 2000);
+
     if(screen.width < 700){
+        document.querySelector(".headerCls").style.marginBottom = '0';
         $(".relojesImgs").css({
             'opacity': '0',
             'display': 'grid'
-        }).animate({'opacity': '1'}, 3000);
+        }).animate({'opacity': '1'}, 2000);
         $(".selectType").css({
             'opacity': '0',
             'display': 'grid'
-        }).animate({'opacity': '1'}, 3000);
+        }).animate({'opacity': '1'}, 2000);
     }
+
+    hideMenu();
+    document.querySelector(".menuImg").style.rotate = '360deg';
+    $(".boxSecondHour").fadeOut(500, function (){
+        $(".time").fadeOut(500);
+        $(".videoContainer").fadeOut(500);
+        $(".boxOfWatches").delay(500).fadeIn(500);
+    });
+   
+       
 }
 function displayHour(){
+    $(".navSelector").fadeOut(500);
+    document.querySelector(".menuImg").style.rotate = '360deg';
     if(screen.width < 700){
         document.querySelector(".headerCls").style.marginBottom = '0';
     }
@@ -100,24 +104,23 @@ function displayHour(){
         $(".videoContainer").fadeOut(500);
         $(".time").delay(500).fadeIn(500);
     });
-    hideMenu();
-    document.querySelector(".menuImg").style.rotate = '360deg';
 }
 function showPrincipal(){
-    $(".afterContainer").fadeOut(500, function (){
-        $(".welcome").delay(500).fadeIn(500);
-    });
     hideMenu();
     document.querySelector(".menuImg").style.rotate = '360deg';
     displayHome()
+    $(".afterContainer").fadeOut(500, function (){
+        $(".welcome").delay(500).fadeIn(500);
+    });
 }
 function displayHome(){
+    $(".navSelector").fadeOut(500);
+    document.querySelector(".menuImg").style.rotate = '360deg';
     $(".selectType").fadeOut(500, function (){
-        $(".boxSecondHour").delay(500).fadeIn(500);
+        $(".time").fadeOut(500);
         $(".relojesImgs").fadeOut(500);
         $(".videoContainer").delay(500).fadeIn(500);
-        $(".time").fadeOut(500);
-        hideMenu();
+        $(".boxSecondHour").delay(500).fadeIn(500);
     });
 }
 (function () {
@@ -138,7 +141,6 @@ function displayHome(){
     const angle = linearMap(currentHour, 0, 12, 0, 360);
     document.querySelector(".hoursHand").style.transform = `rotate(${angle}deg)`;
   }
-  
   function calculateMinuteDegrees() {
     const currentMinutes = new Date().getMinutes();
     const angle = linearMap(currentMinutes, 0, 60, 0, 360);
